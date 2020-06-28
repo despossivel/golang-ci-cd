@@ -8,9 +8,9 @@ steps:
   - id: "Building application"
     name: "gcr.io/cloud-builders/docker"
     args: ["run", "gcr.io/$PROJECT_ID/app-go:$SHORT_SHA", "go", "build"]
-  # - id: "Rodando teste unitário"
-  #   name: "gcr.io/cloud-builders/docker"
-  #   args: ["run", gcr.io/$PROJECT_ID/app-go:$SHORT_SHA", "go", "test"]
+  - id: "Rodando teste unitário"
+    name: "gcr.io/cloud-builders/docker"
+    args: ["run", "gcr.io/$PROJECT_ID/app-go:$SHORT_SHA", "go", "test"]
   - id: "Pushing image"
     name: "gcr.io/cloud-builders/docker"
     args: ["push", "gcr.io/$PROJECT_ID/app-go:$SHORT_SHA"]
