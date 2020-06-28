@@ -2,7 +2,10 @@ steps:
   - id: "Rodando docker-compose"
     name: "gcr.io/$PROJECT_ID/docker-compose"
     args: ["-f", "docker-compose.cloudbuild.yml", "up", "-d"]
-  - id: "Rodando testes"
+  - id: "Building application"
+    name: "gcr.io/cloud-builders/docker"
+    args: ["exec", "-t", "app_go", "go", "run", "build"]
+  - id: "Rodando teste unitário"
     name: "gcr.io/cloud-builders/docker"
     args: ["exec", "-t", "app_go", "go", "test"]
   - id: "Building image"
