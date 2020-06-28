@@ -4,7 +4,7 @@ steps:
     args: ["-f", "docker-compose.cloudbuild.yml", "up", "-d"]
   - id: "Building application"
     name: "gcr.io/cloud-builders/docker"
-    args: ["exec", "-t", "app_go", "go", "run", "build"]
+    args: ["exec", "-t", "app_go", "go", "build"]
   - id: "Rodando teste unitário"
     name: "gcr.io/cloud-builders/docker"
     args: ["exec", "-t", "app_go", "go", "test"]
