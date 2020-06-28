@@ -9,9 +9,9 @@
 **Passos da esteira de CI & CD**
 
  1. Rodando docker-compose
- 2. Build application
- 3. Rodando teste unitário 
- 4. Build image do contêiner
+ 2. Build image do contêiner
+ 3. Build application
+ 4. Rodando teste unitário 
  5. Push da imagem do contêiner para o registry
 
 
